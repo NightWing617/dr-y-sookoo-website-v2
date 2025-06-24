@@ -8,85 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#A5BDFD',
-                        accent: '#EDEDED',
-                        highlight: '#2D3142',
-                        softgreen: '#77DD77',
-                    },
-                    fontFamily: {
-                        heading: ['Montserrat', 'sans-serif'],
-                        body: ['Raleway', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Raleway', sans-serif;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-        }
-        .hero-bg {
-            background-image: linear-gradient(rgba(45, 49, 66, 0.7), rgba(45, 49, 66, 0.7)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1953&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        .iv-card {
-            transition: all 0.3s ease;
-            border-left: 4px solid #A5BDFD;
-        }
-        .iv-card:hover {
-            border-left: 4px solid #77DD77;
-        }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        .accordion.active + .accordion-content {
-            max-height: 500px;
-        }
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #A5BDFD;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .section-divider {
-            position: relative;
-        }
-        .section-divider::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: #A5BDFD;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-accent text-gray-700">
     <!-- Header/Navigation -->
@@ -423,7 +345,7 @@
                 <div class="mb-4">
                     <button class="accordion w-full text-left p-4 bg-accent rounded-t-lg font-bold flex justify-between items-center">
                         <span>General Consult</span>
-                        <span>R400</span>
+                          <span>R400 (R450 Sundays &amp; Public Holidays)</span>
                     </button>
                     <div class="accordion-content bg-white rounded-b-lg shadow-md">
                         <div class="p-4">
@@ -505,30 +427,18 @@
             <div class="mt-16 bg-primary rounded-xl p-8">
                 <h3 class="text-2xl font-bold text-white text-center mb-6">Weekly Specials</h3>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="bg-white rounded-lg p-4 text-center">
-                        <h4 class="font-bold text-highlight">Tuesday</h4>
-                        <p>20% off Pensioners' Consults</p>
+                        <h4 class="font-bold text-highlight">Pensioners Mon–Sat</h4>
+                        <p>Consults R250</p>
                     </div>
-                    
                     <div class="bg-white rounded-lg p-4 text-center">
-                        <h4 class="font-bold text-highlight">Wednesday</h4>
-                        <p>Kids' Clinic – R200 Consult + Vaccine Discount</p>
+                        <h4 class="font-bold text-highlight">Pensioners Sun &amp; Public Holidays</h4>
+                        <p>Consults R300</p>
                     </div>
-                    
                     <div class="bg-white rounded-lg p-4 text-center">
-                        <h4 class="font-bold text-highlight">Friday</h4>
-                        <p>Women's Day – Pap & Breast Combo (R450)</p>
-                    </div>
-                    
-                    <div class="bg-white rounded-lg p-4 text-center">
-                        <h4 class="font-bold text-highlight">Saturday</h4>
-                        <p>R100 Off Any IV Drip</p>
-                    </div>
-                    
-                    <div class="bg-white rounded-lg p-4 text-center">
-                        <h4 class="font-bold text-highlight">Loyalty Card</h4>
-                        <p>5th Visit Free</p>
+                        <h4 class="font-bold text-highlight">General Consult</h4>
+                        <p>R400 (R450 Sundays &amp; Public Holidays)</p>
                     </div>
                 </div>
             </div>
@@ -698,14 +608,10 @@
                 </div>
                 
                 <div>
-                    <div class="bg-gray-200 h-full rounded-xl flex items-center justify-center">
-                        <div class="text-center p-8">
-                            <i class="fas fa-map-marked-alt text-6xl text-highlight mb-4"></i>
-                            <h3 class="text-xl font-bold mb-2 text-highlight">Practice Location</h3>
-                            <p>Google Maps integration will appear here</p>
-                            <p class="mt-4 text-sm">Future integration: Embedded Google Maps</p>
-                        </div>
+                    <div class="h-full rounded-xl overflow-hidden">
+                        <iframe src="https://maps.google.com/maps?q=18%20Wavemore%20Place,%20Phoenix%20Unit%2011&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -801,53 +707,6 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-        
-        // Accordion functionality
-        const accordions = document.querySelectorAll('.accordion');
-        accordions.forEach(accordion => {
-            accordion.addEventListener('click', function() {
-                this.classList.toggle('active');
-                const content = this.nextElementSibling;
-                
-                // Close other accordions
-                accordions.forEach(otherAccordion => {
-                    if (otherAccordion !== this) {
-                        otherAccordion.classList.remove('active');
-                        otherAccordion.nextElementSibling.style.maxHeight = null;
-                    }
-                });
-                
-                // Toggle current accordion
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-                } else {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                }
-            });
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                document.getElementById('mobile-menu').classList.add('hidden');
-            });
-        });
-    </script>
-<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=qdj6rvaf9e/dr-y-sookoo-website-v2" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+    <script src="script.js"></script>
+</body>
 </html>
